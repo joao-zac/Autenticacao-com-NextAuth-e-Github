@@ -1,9 +1,19 @@
 import Image from "next/image";
+import LoginButton from "./Components/LoginButton";
 
-import githubIcon from "../../public/githubVector.svg"
 import linesVector from "../../public/linesVector.svg"
+import { getServerSession } from "next-auth";
+import { authOptions } from "./lib/auth";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await getServerSession(authOptions)
+
+  if(session) {
+    return redirect('/logged')
+  }
+
   return (
     <article className="w-screen h-screen flex">
 
@@ -19,10 +29,7 @@ export default function Home() {
           e a qualidade do software.
         </p>
 
-        <button className="flex bg-txtDarkBtnBg items-center mx-auto mt-16 p-3 rounded-xl">
-          <Image src={githubIcon} alt="Icone do github" width={38} height={36} />
-          <p className="text-txtLghtBg pl-2">Login com GitHub</p>
-        </button>
+        <LoginButton />
       </main>
     </article>
     

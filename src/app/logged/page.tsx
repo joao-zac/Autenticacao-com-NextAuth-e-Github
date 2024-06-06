@@ -3,8 +3,19 @@ import Menu from "../Components/Menu"
 
 import Avatar from "../../../public/Avatar.svg"
 import DetailImage from "../../../public/Detail Image.svg"
+import LogoutButton from "../Components/LogoutButton"
+import { getServerSession } from "next-auth"
+import { authOptions } from "../lib/auth"
+import { redirect } from "next/navigation"
 
-export default function Log() {
+export default async function Log() {
+
+    const session = await getServerSession(authOptions)
+
+    if(!session) {
+        return redirect('/')
+    }
+
     return(
         <main>
             <header className="flex items-center justify-center flex-col">
@@ -19,7 +30,7 @@ export default function Log() {
                 <Menu title="Meus Seguidores" />
             </section>
 
-            <button className="ml-36 bg-txtDarkBtnBg text-2xl text-txtLghtBg mt-8 px-16 py-3 rounded-xl">Logout</button>
+            <LogoutButton />
 
             <Image src={DetailImage} alt="Image" className="fixed right-24 bottom-20"/>
         </main>
