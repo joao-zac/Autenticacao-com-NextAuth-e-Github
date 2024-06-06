@@ -12,7 +12,7 @@ export default function Home() {
       </div>
 
       <main className="mt-64 mx-64 text-center">
-        <h1 className="font-normal text-8xl">Desbloqueie o poder da <b className="font-medium">Análise do github</b></h1>
+        <h1 className="font-light text-8xl text-txtDarkBtnBg">Desbloqueie o poder da <b className="font-medium">Análise do github</b></h1>
 
         <p className="text-txtMedium mt-8 w-[85%] mx-auto">Eleve o desenvolvimento de software com análises automáticas do GitHub, 
           revelando métricas e KPIs inestimáveis para aprimorar a entrega 
