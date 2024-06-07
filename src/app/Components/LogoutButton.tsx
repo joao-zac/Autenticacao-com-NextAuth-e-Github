@@ -9,7 +9,9 @@ export default function LogoutButton() {
   }
 
   return (
-    <button onClick={handleClick} className="ml-36 bg-txtDarkBtnBg text-2xl text-txtLghtBg mt-8 px-16 py-3 rounded-xl">Logout</button>
+    <button onClick={handleClick} 
+    className="md:ml-36 ml-24  bg-txtDarkBtnBg text-2xl text-txtLghtBg 
+    mt-8 px-16 py-3 rounded-xl">
+    Logout</button>
   )
-    
 }

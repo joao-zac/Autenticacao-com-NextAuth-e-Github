@@ -12,7 +12,7 @@ export default function loginButton() {
   }
 
   return (
-    <button onClick={handleClick} className="flex bg-txtDarkBtnBg items-center mx-auto mt-16 p-3 rounded-xl">
+    <button onClick={handleClick} className="flex bg-txtDarkBtnBg items-center mx-auto mt-36 lg:mt-16 p-3 rounded-xl">
       <Image src={githubIcon} alt="Icone do github" width={38} height={36} />
       <p className="text-txtLghtBg pl-2">Login com GitHub</p>
     </button>

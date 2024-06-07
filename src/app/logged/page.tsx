@@ -32,13 +32,13 @@ export default async function Log() {
 
     return(
         <main>
-            <header className="flex items-center justify-center flex-col">
+            <header className="flex items-center justify-center flex-col text-center">
                 <Image src={user?.image ?? ''} alt="Avatar do usuario" width={100} height={100} className="rounded-full mt-14"/>
-                <h1 className="text-6xl pt-4 text-txtDarkBtnBg">Boas vindas, <b>{user?.name}</b></h1>
-                <p className="text-3xl text-txtMedium pt-8">Que tal analisarmos seu GitHub?</p>
+                <h1 className="md:text-6xl text-4xl pt-4 text-txtDarkBtnBg">Boas vindas, <b>{user?.name}</b></h1>
+                <p className="md:text-3xl text-2xl  text-txtMedium pt-8">Que tal analisarmos seu GitHub?</p>
             </header>
 
-            <section className="ml-36 mt-20  w-2/5 divide-y border-y">
+            <section className="md:ml-36 ml-10 mt-20 w-4/5  md:w-2/5 divide-y border-y">
                 <Menu URL={repoURL} title="Meus Repositórios" quant={repoCount} />
                 <Menu URL={gistURL} title="Meus Gists" quant={gistCount} />
                 <Menu URL={followersURL} title="Meus Seguidores" quant={followers} />
@@ -46,7 +46,7 @@ export default async function Log() {
 
             <LogoutButton />
 
-            <Image src={DetailImage} alt="Image" className="fixed right-24 bottom-20"/>
+            <Image src={DetailImage} alt="Image" className="absolute invisible xl:visible right-24 bottom-20"/>
         </main>
     )
 }
