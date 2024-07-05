@@ -9,7 +9,7 @@ type Props = {
     URL: string
 }
 
-export default function(props: Props) {
+export default function Menu(props: Props) {
 
     return (
         <Link href={props.URL} className="
